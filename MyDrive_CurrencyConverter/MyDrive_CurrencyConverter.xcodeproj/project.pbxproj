@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9938A2CF1DCB51F2006E9A0E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938A2CE1DCB51F2006E9A0E /* NetworkManager.swift */; };
 		996A7F741DC8EF6800D48464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996A7F731DC8EF6800D48464 /* AppDelegate.swift */; };
 		996A7F761DC8EF6800D48464 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996A7F751DC8EF6800D48464 /* ViewController.swift */; };
 		996A7F791DC8EF6800D48464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996A7F771DC8EF6800D48464 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9938A2CE1DCB51F2006E9A0E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		996A7F701DC8EF6800D48464 /* MyDrive_CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDrive_CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		996A7F731DC8EF6800D48464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		996A7F751DC8EF6800D48464 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9938A2CB1DCB517D006E9A0E /* Core  */ = {
+			isa = PBXGroup;
+			children = (
+				996A7F731DC8EF6800D48464 /* AppDelegate.swift */,
+				9938A2CE1DCB51F2006E9A0E /* NetworkManager.swift */,
+			);
+			name = "Core ";
+			sourceTree = "<group>";
+		};
+		9938A2CC1DCB518D006E9A0E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				996A7F751DC8EF6800D48464 /* ViewController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		9938A2CD1DCB51A9006E9A0E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				996A7F771DC8EF6800D48464 /* Main.storyboard */,
+				996A7F7A1DC8EF6800D48464 /* Assets.xcassets */,
+				996A7F7C1DC8EF6800D48464 /* LaunchScreen.storyboard */,
+				996A7F7F1DC8EF6800D48464 /* Info.plist */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		996A7F671DC8EF6800D48464 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +84,9 @@
 		996A7F721DC8EF6800D48464 /* MyDrive_CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
-				996A7F731DC8EF6800D48464 /* AppDelegate.swift */,
-				996A7F751DC8EF6800D48464 /* ViewController.swift */,
-				996A7F771DC8EF6800D48464 /* Main.storyboard */,
-				996A7F7A1DC8EF6800D48464 /* Assets.xcassets */,
-				996A7F7C1DC8EF6800D48464 /* LaunchScreen.storyboard */,
-				996A7F7F1DC8EF6800D48464 /* Info.plist */,
+				9938A2CD1DCB51A9006E9A0E /* Resource */,
+				9938A2CC1DCB518D006E9A0E /* UI */,
+				9938A2CB1DCB517D006E9A0E /* Core  */,
 			);
 			path = MyDrive_CurrencyConverter;
 			sourceTree = "<group>";
@@ -137,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9938A2CF1DCB51F2006E9A0E /* NetworkManager.swift in Sources */,
 				996A7F761DC8EF6800D48464 /* ViewController.swift in Sources */,
 				996A7F741DC8EF6800D48464 /* AppDelegate.swift in Sources */,
 			);
@@ -302,6 +330,7 @@
 				996A7F841DC8EF6800D48464 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
