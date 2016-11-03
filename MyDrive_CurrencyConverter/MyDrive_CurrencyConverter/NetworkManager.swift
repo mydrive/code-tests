@@ -13,8 +13,8 @@ class NetworkManager {
     let defaultSession : URLSession
     
     /**
-     * Create a shared instance to initialise class as a singleton
-     * originally taken from: http://krakendev.io/blog/the-right-way-to-write-a-singleton
+     Create a shared instance to initialise class as a singleton
+     Originally taken from: http://krakendev.io/blog/the-right-way-to-write-a-singleton
      */
     static let sharedInstance = NetworkManager()
     fileprivate init() {
@@ -26,17 +26,15 @@ class NetworkManager {
     }
     
     /**
-     * Handles a URLRequest of whatever type
-     *
-     * This gives me the ability to expand the class to handle different request methods
-     * e.g. For RESTful API interaction
-     *
-     * @param: request: URLRequest - The URL request
-     * @param: completionHandler: (Data?, URLResponse?, Error?) -> Void)
-     *         - A method to handle the returned data
-     */
-    
-    func handleRequest (request : URLRequest, completion : @escaping (Data?, URLResponse?, Error?) -> Void) {
+    Handles a URLRequest of whatever type
+
+    This gives me the ability to expand the class to handle different request methods
+    e.g. For RESTful API interaction
+
+    - Parameter request:  The URL request
+    - Parameter completion: A method to handle the returned data
+    */
+    func handleRequest(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
         let task : URLSessionDataTask = defaultSession.dataTask(with: request, completionHandler: completion)
         task.resume()
     }
