@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 DLog("Error: \(error)")
                 return
             }
-            DLog("urlResponse: \(urlResponse)")
+            DataHandler.sharedInstance.newData(newData: data!)
         }
 
         return true
