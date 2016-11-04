@@ -45,31 +45,11 @@ class DataHandler {
                         DLog("object is not NSDictionary")
                     }
                 }
-                DLog("dollarValues:\n\(dollarValues)")
             } else {
                 DLog("Cannot convert conversions to NSArray")
             }
         } else {
             DLog("jsonData is not NSDictionary")
-        }
-    }
-    
-    /**
-     Converts rate conversion objects to dollar rates
-     
-     - parameter conversionObject: A rate conversion object
-     */
-    func convertConversionObjectToDollarRate (conversionObject: Dictionary<String, AnyObject>) {
-        if let
-            from = conversionObject["from"] as? String,
-            let to = conversionObject["to"] as? String,
-            let rate = conversionObject["rate"] as? Float
-        {
-            if from == "USD" {
-                dollarValues[to] = rate
-            } else if to == "USD" {
-                dollarValues[from] = 1/rate
-            }
         }
     }
     
@@ -97,5 +77,43 @@ class DataHandler {
             DLog("No values extracted from object:\n\(object)")
         }
         return result
+    }
+    
+    /**
+     Converts rate conversion objects to dollar rates
+     
+     - parameter conversionObject: A rate conversion object
+     */
+    func convertConversionObjectToDollarRate (conversionObject: Dictionary<String, AnyObject>) {
+        if let
+            from = conversionObject["from"] as? String,
+            let to = conversionObject["to"] as? String,
+            let rate = conversionObject["rate"] as? Float
+        {
+            if from == "USD" {
+                dollarValues[to] = rate
+            } else if to == "USD" {
+                dollarValues[from] = 1/rate
+            }
+        }
+    }
+    
+    /**
+     Calculates an exchange rate betweeen two currencies
+     
+     - parameters:
+        - from: The currency to convert from
+        - to: The currency to convert to
+     
+     - returns: The exchange rate
+     */
+    func exchangeRate (from : String, to : String) -> Float {
+        if let fromRate : Float = dollarValues[from],
+            let toRate : Float = dollarValues[to]
+        {
+            return toRate/fromRate
+        }
+        DLog("Unable to calculate exchange rate")
+        return 0
     }
 }
